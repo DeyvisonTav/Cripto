@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/pages/ajustes.jsx", "src/pages/autenticacao.jsx", "src/pages/index.jsx"  ],
   "exclude": [
     "node_modules"
   ]

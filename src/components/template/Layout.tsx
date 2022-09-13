@@ -16,10 +16,10 @@ export default function Layout(props: LayoutProps) {
         <ForcarAutenticacao>
             <div className={`${tema} flex h-screen w-screen`}>
                 <MenuLateral />
-                <div className={`
+                <div className={` 
                 flex flex-col w-full p-7 text-center 
                 bg-gray-300 dark:bg-gray-800
-                pl-[10rem] 
+                md:pl-[10rem] 
                 
             `}>
                     <Cabecalho titulo={props.titulo} subtitulo={props.subtitulo} />
