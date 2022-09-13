@@ -48,24 +48,24 @@ export default function Home() {
                     <Td isNumeric>{data[0].priceUsd}</Td>
                   </Tr>
                   <Tr>
-                    <Td>Ethereum</Td>
-                    <Td>ETH</Td>
-                    <Td isNumeric>1620.7691114038028483</Td>
+                    <Td>{data[1].name}</Td>
+                    <Td>{data[1].symbol}</Td>
+                    <Td isNumeric>{data[1].priceUsd}</Td>
                   </Tr>
                   <Tr>
-                    <Td>Tether</Td>
-                    <Td>USDT</Td>
-                    <Td isNumeric>1.0024157971840956</Td>
+                    <Td>{data[2].name}</Td>
+                    <Td>{data[2].symbol}</Td>
+                    <Td isNumeric>{data[2].priceUsd}</Td>
                   </Tr>
                   <Tr>
-                    <Td>USD Coin	</Td>
-                    <Td>USDC</Td>
-                    <Td isNumeric>1.0031445397965252</Td>
+                    <Td>{data[3].name}</Td>
+                    <Td>{data[3].symbol}</Td>
+                    <Td isNumeric>{data[3].priceUsd}</Td>
                   </Tr>
                   <Tr>
-                    <Td>BNB</Td>
-                    <Td>BNB</Td>
-                    <Td isNumeric>282.6969549849119802</Td>
+                    <Td>{data[4].name}</Td>
+                    <Td>{data[4].symbol}</Td>
+                    <Td isNumeric>{data[4].priceUsd}</Td>
                   </Tr>
                 </Tbody>
                 <Tfoot>

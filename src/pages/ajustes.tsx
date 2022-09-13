@@ -19,26 +19,26 @@ export default function Ajustes() {
       
     },
     {
-      name:'Ethereum',
-      uv: 1620.7691114038028483,
+      name: data[1].name,
+      uv: data[1].priceUsd,
       pv: 0,
      
     },
     {
-      name: "TetherC",
-      uv: 1.0024157971840956,
+      name:data[2].name,
+      uv:data[2].priceUsd,
       pv: 0,
       
     },
     {
-      name: "USD Coin",
-      uv: 1.0031445397965252,
+      name: data[3].name,
+      uv: data[3].priceUsd,
       pv: 0,
       
     },
     {
-      name: "BNB",
-      uv: 282.6969549849119802,
+      name: data[4].name,
+      uv: data[4].priceUsd,
       pv: 0,
       
     },
