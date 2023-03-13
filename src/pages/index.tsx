@@ -12,12 +12,23 @@ import {
   TableContainer,
 } from "@chakra-ui/react";
 import { useFetch } from "./api/useFetch";
+import { useEffect, useState } from "react";
+
+interface CriptoProps {
+  name: string;
+  symbol: string;
+  priceUsd: number;
+}
 
 export default function Home() {
   const { data, isFetching } = useFetch();
-   
-  console.log(data);
+  const [cripto, setCripto] = useState<CriptoProps[] | any>([]);
 
+  useEffect(() => {
+    const moedas = data.slice(0, 10);
+    setCripto(moedas);
+    console.log(moedas);
+  }, [data]);
   return (
     <div className="h-full max-w-full">
       <Layout
@@ -42,31 +53,13 @@ export default function Home() {
                   </Tr>
                 </Thead>
                 <Tbody>
-                  <Tr>
-                    <Td>{data[0].name}</Td>
-                    <Td>{data[0].symbol}</Td>
-                    <Td isNumeric>{data[0].priceUsd}</Td>
-                  </Tr>
-                  <Tr>
-                    <Td>{data[1].name}</Td>
-                    <Td>{data[1].symbol}</Td>
-                    <Td isNumeric>{data[1].priceUsd}</Td>
-                  </Tr>
-                  <Tr>
-                    <Td>{data[2].name}</Td>
-                    <Td>{data[2].symbol}</Td>
-                    <Td isNumeric>{data[2].priceUsd}</Td>
-                  </Tr>
-                  <Tr>
-                    <Td>{data[3].name}</Td>
-                    <Td>{data[3].symbol}</Td>
-                    <Td isNumeric>{data[3].priceUsd}</Td>
-                  </Tr>
-                  <Tr>
-                    <Td>{data[4].name}</Td>
-                    <Td>{data[4].symbol}</Td>
-                    <Td isNumeric>{data[4].priceUsd}</Td>
-                  </Tr>
+                  {cripto?.map((item: CriptoProps, index: number) => (
+                    <Tr key={index}>
+                      <Td>{item.name}</Td>
+                      <Td>{item.symbol}</Td>
+                      <Td isNumeric>{item.priceUsd}</Td>
+                    </Tr>
+                  ))}
                 </Tbody>
                 <Tfoot>
                   <Tr>
@@ -74,11 +67,10 @@ export default function Home() {
                     <Th>Symbol</Th>
                     <Th isNumeric>PriceUSD</Th>
                   </Tr>
-                  
                 </Tfoot>
               </Table>
             </TableContainer>
-          </ChakraProvider> 
+          </ChakraProvider>
         </div>
       </Layout>
     </div>
